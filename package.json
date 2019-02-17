@@ -1,6 +1,6 @@
 {
-  "name": "msdf-bmfont-xml",
-  "version": "2.3.5",
+  "name": "scarlett-msdf-bmfont-xml",
+  "version": "2.3.6",
   "description": "Creates a BMFont compatible bitmap font of Signed-Distance Fields from a font file",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,7 @@
   "bin": {
     "msdf-bmfont": "./cli.js"
   },
-  "author": {
-    "name": "YM Shen",
-    "email": "soimy@163.com",
-    "url": "https://github.com/soimy"
-  },
+  "author": "YM Shen <soimy@163.com> and changed by Luís Fernandes aka Apidcloud <luisapidcloud@hotmail.com>",
   "keywords": [
     "bmfont",
     "bitmap",
@@ -32,11 +28,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/soimy/msdf-bmfont-xml.git"
+    "url": "git@github.com:Apidcloud/msdf-bmfont-xml.git"
   },
-  "homepage": "https://github.com/soimy/msdf-bmfont-xml",
+  "homepage": "https://github.com/Apidcloud/msdf-bmfont-xml",
   "bugs": {
-    "url": "https://github.com/soimy/msdf-bmfont-xml/issues"
+    "url": "https://github.com/Apidcloud/msdf-bmfont-xml/issues"
   },
   "license": "MIT",
   "dependencies": {
