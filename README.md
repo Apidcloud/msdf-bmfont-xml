@@ -1,4 +1,4 @@
-# msdf-bmfont-xml
+# scarlett-msdf-bmfont-xml
 
 [![Build Status](https://travis-ci.org/soimy/msdf-bmfont-xml.svg?branch=master)](https://travis-ci.org/soimy/msdf-bmfont-xml)
 [![npm version](https://badge.fury.io/js/msdf-bmfont-xml.svg)](https://badge.fury.io/js/msdf-bmfont-xml)
@@ -12,7 +12,7 @@ This tool uses [Chlumsky/msdfgen](https://github.com/Chlumsky/msdfgen) to genera
 
 ## Install as CLI
 ```bash
-$ npm install msdf-bmfont-xml -g
+$ npm install scarlett-msdf-bmfont-xml -g
 ```
 Then you just need to call `msdf-bmfont` from console to generate font file.
 Type in `msdf-bmfont --help` for more detail usage.
@@ -91,7 +91,7 @@ $ npm install msdf-bmfont-xml
 
 Writing the distance fields and font data to disk:
 ```js
-const generateBMFont = require('msdf-bmfont-xml');
+const generateBMFont = require('scarlett-msdf-bmfont-xml');
 const fs = require('fs');
 
 generateBMFont('Some-Font.ttf', (error, textures, font) => {
@@ -109,7 +109,7 @@ generateBMFont('Some-Font.ttf', (error, textures, font) => {
 
 Generating a single channel signed distance field with a custom character set:
 ```js
-const generateBMFont = require('msdf-bmfont');
+const generateBMFont = require('scarlett-msdf-bmfont');
 
 const opt = {
   charset: 'ABC.ez_as-123!',
