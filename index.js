@@ -4,7 +4,7 @@ const opentype = require('opentype.js');
 const exec = require('child_process').exec;
 const mapLimit = require('map-limit');
 const MaxRectsPacker = require('maxrects-packer').MaxRectsPacker;
-const Canvas = require('canvas-prebuilt');
+const { createCanvas, loadImage, createImageData } = require('@scarlett-game-studio/canvas');
 const path = require('path');
 const ProgressBar = require('cli-progress');
 const fs = require('fs');
@@ -173,7 +173,7 @@ function generateBMFont (fontPath, opt, callback) {
     const textures = packer.bins.map((bin, index) => {
       let svg = "";
       let texname = "";
-      const canvas = new Canvas(bin.width, bin.height);
+      const canvas = createCanvas(bin.width, bin.height);
       const context = canvas.getContext('2d');
       if(fieldType === "msdf") {
         context.fillStyle = '#000000';
@@ -187,11 +187,15 @@ function generateBMFont (fontPath, opt, callback) {
         pages.push(`${texname}.png`);
       } else {
         texname = path.basename(pages[index], path.extname(pages[index]));
-        let img = new Canvas.Image;
         let imgPath = path.join(fontDir, `${texname}.png`);
+        const img = loadImage(imgPath);
         console.log('Loading previous image : ', imgPath);
-        img.src = fs.readFileSync(imgPath);
-        context.drawImage(img, 0, 0);
+
+        img.then(() => {
+          context.drawImage(img, 0, 0);
+        }).catch(err => {
+          console.log('#ERR123 oh no!', err)
+        })
       }
       bin.rects.forEach(rect => {
         if (rect.data.imageData) {
@@ -351,7 +355,7 @@ function generateImage (opt, callback) {
       width = 0;
       height = 0;
     } else {
-      imageData = new Canvas.ImageData(new Uint8ClampedArray(pixels), width, height);
+      imageData = createImageData(new Uint8ClampedArray(pixels), width, height);
     }
     const container = {
       data: {

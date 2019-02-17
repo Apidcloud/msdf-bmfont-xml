@@ -40,8 +40,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@scarlett-game-studio/canvas": "2.3.1",
     "arabic-persian-reshaper": "^1.0.0",
-    "canvas-prebuilt": "2.0.0-alpha.2",
     "cli-progress": "^2.0.0",
     "commander": "^2.15.1",
     "handlebars": "^4.0.11",
